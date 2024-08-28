@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Importance of Web Development</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #eee;
+            overflow-x: hidden;
+        }
+
+        nav {
+            background-color: #252525;
+            color: #fff;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-left: 10rem; /* Maintain left margin */
+        }
+
+        nav .burger {
+            display: none;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 1.5rem;
+            margin-right: 10rem; /* Maintain right margin */
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b;
+            text-decoration: underline;
+        }
+
+        section {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero {
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            height: 100vh;
+            padding: 2rem 4rem;
+            box-sizing: border-box;
+            text-align: right;
+        }
+
+        .hero h1 {
+            color: yellow;
+            font-size: 4rem;
+            line-height: 1.7;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-top: 1rem;
+            max-width: 50rem;
+            opacity: 0.9;
+            transform: scale(1);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            text-align: justify;
+        }
+
+        .hero p:hover {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .about {
+            background-image: url('bg1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #eee;
+            text-align: center;
+            border: 1px solid #444;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            position: relative;
+            padding: 2rem;
+        }
+
+        .about h2 {
+            font-size: 3rem;
+            color: yellow;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            margin-left: -40rem; 
+            text-align: left;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #ccc;
+            text-align: left;
+            margin-left: -40rem;
+        }
+
+        .logo {
+            display: block;
+            margin-left: -40rem; 
+            width: 54rem;
+            max-width: 100%; 
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1); 
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #ff6f61;
+            color: #fff;
+            font-size: 1rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+      
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .about h2 {
+                font-size: 2rem;
+                margin-left: -10rem;
+            }
+            .about p {
+                font-size: 1rem;
+                margin-left: -10rem;
+            }
+            .logo {
+                width: 80%; 
+                margin-left: auto; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .about h2 {
+                font-size: 1.5rem;
+                margin-left: 0; 
+            }
+            .about p {
+                font-size: 0.9rem;
+                margin-left: 0; 
+            }
+            .logo {
+                width: 60%; 
+                margin-left: auto; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Logo</div>
+        <div class="burger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" onclick="showSection('home')">HOME</a></li>
+            <li><a href="#about" onclick="showSection('about')">ABOUT</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-infos"></div>
+            <h1>Web Development</h1>
+            <p>Web development, also known as website development, refers to the tasks associated with creating, building, and maintaining websites <br>
+                 and web applications that run online on a browser. It may, however, also include web design, web programming, and database management.<br>                    
+            Web development is closely related to the job of designing the features and functionality of apps (web design). <br>
+            The term development is usually reserved for the actual construction of these things (that is to say, the programming of sites).</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="About-infos">
+            <h2>Why Web Development Matters</h2>
+            <p>Web development is crucial in today's digital age. It involves creating and maintaining websites, ensuring <br>
+                 they are functional, user-friendly, and aesthetically pleasing. HTML provides the structure, CSS styles it, <br>
+                 and JavaScript adds interactivity, making web pages dynamic and engaging.</p>
+            <p>By mastering these technologies, developers can craft compelling online experiences, optimize user <br>
+                engagement, and ultimately drive success for businesses and individuals alike.</p>
+            <img src="logo.jpg" alt="Web Development Logo" title="Web Development Logo" class="logo">
+        </div>
+    </section>
+
+    <footer>
+        <p>All rights reserved <br>
+            &copy; 2024 Web Development by Karl Domanais.</p>
+    </footer>
+</body>
+    <script>
+        function scrollToSection(sectionId) {
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+   
+</html>
